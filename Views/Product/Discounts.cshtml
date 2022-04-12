@@ -1,0 +1,17 @@
+﻿@using Northwind_.Models
+@model IQueryable<Discount>
+
+<div class="bg-primary m-1 p-1 text-white">
+    <h4>Discount Listing</h4>
+</div>
+
+<ul class="list-group">
+    @foreach (var discount in Model)
+    {
+        <li class="list-group-item">
+            <h3>@discount.Title</h3>
+            <i>Discount Expires: @discount.EndTime.ToString("MM/dd/yyyy")</i><br />
+            <a href="#" class="code" data-code="@discount.Code" data-product="@discount.Title"><i class="far fa-hand-point-right"></i> Discount Code</a>
+        </li>
+    }
+</ul>

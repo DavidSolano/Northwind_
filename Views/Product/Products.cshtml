@@ -1,0 +1,24 @@
+@using Northwind_.Models
+@model ProductViewModel
+
+<div class="bg-primary m-1 p-1 text-white">
+    <h4>Products</h4>
+</div>
+
+@if (Model._products.Count() == 0)
+{
+    <p>No Products Available</p>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var product in Model._products)
+        {
+            <li class="list-group-item">
+                <a>Product Name: @product.ProductName  -  Unit Price: @product.UnitPrice  -  Units In Stock: @product.UnitsInStock</a>
+            </li>
+        }
+    </ul>
+}
+
+
